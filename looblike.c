@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int N,i,count,tem=0,r[5];
+    int N,i,count,tem=0,r[2];
     scanf("%d",&N);
     int n[N];
     for(i=0;i<N;i++)
@@ -18,18 +18,18 @@ int main()
                 count++;
             }
         }
-        if(count>=tem && n[i]!=r)
+        if(count>=tem)
         {
+            if(count==tem)
+            {
+                r[1]=n[i];
+            }
             if(count>tem)
             {
                 r[0]=n[i];
                 tem=count;
             }
-            else if(count==tem && n[i]!=r)
-            {
-                r[1]=n[i];
-                tem=count;
-            }
+
 
         }
     }
