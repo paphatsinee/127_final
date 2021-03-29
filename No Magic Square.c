@@ -1,13 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int a,b,c,i,j,k,Ra=0,La=0,Rb=0,Lb=0,Rc=0,Lc=0;
+    int a,b,c,i,j,k,m,l,Ra=0,La=0,Rb=0,Lb=0,Rc=0,Lc=0;
     scanf("%d %d %d",&a,&b,&c);
     int A[a][a],rowA[a],colA[a], B[b][b],rowB[b],colB[b], C[c][c],rowC[c],colC[c];
     for(i=0;i<a;i++)
     {
         for(j=0;j<a;j++)
             scanf("%d",&A[i][j]);
+    }
+    for(i=0;i<b;i++)
+    {
+        for(j=0;j<b;j++)
+            scanf("%d",&B[i][j]);
+    }
+    for(i=0;i<c;i++)
+    {
+        for(j=0;j<c;j++)
+            scanf("%d",&C[i][j]);
     }
     for(i=0;i<a;i++)
     {
@@ -82,8 +92,49 @@ int main()
         else k=0;
     }
     if(k==1)
-        printf("no");
+        printf("no\n");
     else
-        printf("yes");
+        printf("yes\n");
+
+
+
+    for(i=0;i<b;i++)
+    {
+        if(Rb==rowB[i])
+        {
+            if(Rb==Lb)
+            {
+                if(Rb==colB[i])
+                {
+                    m=1;
+                } else m=0;
+            }else m=0;
+        }
+        else m=0;
+    }
+    if(m==1)
+        printf("no\n");
+    else
+        printf("yes\n");
+
+
+    for(i=0;i<c;i++)
+    {
+        if(Rc==rowC[i])
+        {
+            if(Rc==Lc)
+            {
+                if(Rc==colC[i])
+                {
+                    l=1;
+                } else l=0;
+            }else l=0;
+        }
+        else l=0;
+    }
+    if(l==1)
+        printf("no\n");
+    else
+        printf("yes\n");
 
 }
